@@ -1,0 +1,15 @@
+header
+	a(class="logo" href= url_for())
+		svg(viewBox="0 0 500 500")
+			rect(x="0" y="0" width="500" height="500" rx="25" ry="25")
+			polygon(points="173 250 234 311 219 342 127 250 219 158 234 189")
+			polygon(points="328 250 267 189 282 158 374 250 282 342 267 311")
+	.menu-icon-wrapper
+		button.toggle-menu-btn
+			- let n = 0
+			while n < 5
+				span.menu-bar-container
+					span.menu-bar-content
+				- n++
+	nav
+		!= list_categories({ show_count: false })

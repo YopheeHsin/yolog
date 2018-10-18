@@ -1,0 +1,22 @@
+-
+	let title = ''
+	let keywords = ''
+	let description = ''
+	if (is_home() || is_category()) {
+		title = config.title
+		keywords = config.keywords
+		description = config.description
+		if (is_category()) {
+			title = page.category + ' - ' + title
+			keywords = page.category + ',' + keywords
+		}
+	}
+	if (is_post()) {
+		title = page.title + ' - ' + config.title
+		keywords = page.keywords || page.title
+		description = page.description || page.title
+	}
+
+title= title
+meta(name="keywords" content= keywords)
+meta(name="description" content= description)

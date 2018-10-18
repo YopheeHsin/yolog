@@ -1,0 +1,52 @@
+extends _layout.pug
+
+block main
+	- if (is_category()) {
+		.title
+			h3= page.category + ':'
+	- }
+
+	- if (is_home() || is_category()) {
+		.list
+			- page.posts.each(post => {
+				.item
+					.info
+						= date(page.date, 'YYYY.MM')
+						- if (is_home() && post.categories && post.categories.length) {
+							span /
+							- post.categories.each(category => {
+								a(href= url_for(category.path))= category.name
+							- })
+						- }
+					h3
+						a(href= url_for(post.path))= post.title
+			- })
+		- if (page.total > 1) {
+			.pagination
+				!= paginator({ prev_text: '« 上一页', next_text: '下一页 »' })
+		- }
+	- } else if (is_post()) {
+		.title
+			h1= page.title
+			.info
+				= date(page.date, 'YYYY.MM')
+				- if (page.categories && page.categories.length) {
+					span /
+					- page.categories.each(category => {
+						a(href= url_for(category.path))= category.name
+					- })
+				- }
+		.content!= page.content
+		- if (page.prev || page.next) {
+			.pagination
+				- if (page.prev) {
+					a.prev(href= url_for(page.prev.path))= '« ' + page.prev.title
+				- }
+				- if (page.prev && page.next) {
+					span /
+				- }
+				- if (page.next) {
+					a.next(href= url_for(page.next.path))= page.next.title + ' »'
+				- }
+		- }
+	- }
