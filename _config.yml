@@ -57,6 +57,7 @@ index_generator:
 default_category: uncategorized
 category_map:
   Code Snippets: code-snippets
+  Uncategorized: uncategorized
 tag_map:
 
 # Date / Time format
