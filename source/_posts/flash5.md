@@ -6,44 +6,32 @@ keywords: Flash简单动作编程, Flash动画
 description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
 ---
 
-<strong>常用的ActionScript命令</strong>
+## 常用的ActionScript命令
 
 时间轴控制
 
-<ul>
-<li>play(); 开始播放影片</li>
-<li>stop(); 停止播放影片</li>
-<li>gotoAndStop(); 跳转到指定帧并停止</li>
-</ul>
+- play(); 开始播放影片
+- stop(); 停止播放影片
+- gotoAndStop(); 跳转到指定帧并停止
 
 浏览器/网络
 
-<ul>
-<li>getURL(); 打开网页</li>
-<li>loadMovie(); 加载外部图片或Flash动画</li>
-</ul>
+- getURL(); 打开网页
+- loadMovie(); 加载外部图片或Flash动画
 
 按钮的行为
 
-<ul>
-<li>on (release){ }; 单击鼠标左键触发</li>
-<li>on (rollOver){ }; 鼠标滑过时触发</li>
-</ul>
+- on (release){ }; 单击鼠标左键触发
+- on (rollOver){ }; 鼠标滑过时触发
 
+## ActionScript命令添加位置
 
+{% img /images/flash/flash51.jpg 275 %}
 
-<strong>ActionScript命令添加位置</strong>
+- 添加到时间轴关键帧上
+- 添加到按钮上
 
-<img src="http://xinyuefei.com/wp-content/uploads/flash51.jpg" alt="ActionScript命令添加位置" />
+## ActionScript命令运用实例
 
-<ul>
-<li>添加到时间轴关键帧上</li>
-<li>添加到按钮上</li>
-</ul>
-
-<strong>ActionScript命令运用实例</strong>
-
-<ul>
-<li>淘宝Tab标签广告</li>
-<li>简易Flash网站</li>
-</ul>
+- 淘宝Tab标签广告
+- 简易Flash网站

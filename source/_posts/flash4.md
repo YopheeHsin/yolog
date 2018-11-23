@@ -12,53 +12,41 @@ description: 康佳一款电视的电源按钮。在回针下底针板上设计�
 
 Flash按钮：Flash元件的一种，时间轴上只有4帧，即普通状态、鼠标经过状态、鼠标按下状态、鼠标响应区域。
 
-<strong>实例操作</strong>
+实例操作
 
-<img src="http://xinyuefei.com/wp-content/uploads/flash41.gif" alt="Flash进阶动画实例" />
+{% img /images/flash/flash41.gif 275 %}
 
 童年的纸飞机动画
 
-<ul>
-<li>引导层动画</li>
-</ul>
+- 引导层动画
 
 跑圈小破孩动画
 
-<ul>
-<li>引导层动画</li>
-<li>调整到路径</li>
-<li>外部导入gif动画</li>
-<li>路径的显示</li>
-</ul>
+- 引导层动画
+- 调整到路径
+- 外部导入gif动画
+- 路径的显示
 
 光泽掠过文字动画
 
-<ul>
-<li>遮罩动画</li>
-</ul>
+- 遮罩动画
 
 画卷展开动画
 
-<ul>
-<li>遮罩动画与运动补间的配合</li>
-</ul>
+- 遮罩动画与运动补间的配合
 
 玻璃质感按钮
 
-<img src="http://xinyuefei.com/wp-content/uploads/flash42.jpg" alt="Flash玻璃质感按钮" />
+{% img /images/flash/flash42.jpg 275 %}
 
 运送苹果动画
 
-<ul>
-<li>动作补间和引导层动画的综合使用</li>
-<li>不同图层上不同动画元素的配合</li>
-<li>元件的嵌套</li>
-<li>利用网格对齐</li>
-</ul>
+- 动作补间和引导层动画的综合使用
+- 不同图层上不同动画元素的配合
+- 元件的嵌套
+- 利用网格对齐
 
 地图放大镜动画
 
-<ul>
-<li>动作补间和遮罩动画的综合使用</li>
-<li>不同图层上不同动画元素的配合</li>
-</ul>
+- 动作补间和遮罩动画的综合使用
+- 不同图层上不同动画元素的配合
