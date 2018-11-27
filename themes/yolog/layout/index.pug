@@ -11,7 +11,7 @@ block main
 			- page.posts.each(post => {
 				.item
 					.info
-						= date(page.date, 'YYYY.MM')
+						= date(post.date, 'YYYY.MM')
 						- if (is_home() && post.categories && post.categories.length) {
 							span /
 							- post.categories.each(category => {
