@@ -10,20 +10,20 @@ description:
 
 装配过程为，首先将两个装好舵盘的舵机安装在身体框架上，再用身体腹部钣金件锁紧身体框架。
 
-{% img /images/mold/robot/walk1.gif 275 %}
+{% img /images/robot/walk1.gif 275 %}
 
 接着调整腹部两个舵机至中心角度位置，将两个腿部框架分别用螺丝安装在腹部舵机上，然后将另外两个装好舵盘的舵机安装在腿部框架上。
 
-{% img /images/mold/robot/walk2.gif 275 %}
+{% img /images/robot/walk2.gif 275 %}
 
 最后调整腿部两个舵机至中心角度位置，安装脚踝和脚底板，脚踝前部直接与舵盘连接，后部使用类似套筒的轴承连接。
 
-{% img /images/mold/robot/walk3.gif 275 %}
+{% img /images/robot/walk3.gif 275 %}
 
 上面图片均省略了螺丝，电路板、电池和配线等也没有添加。实际制作时，电路板安装在机器人背部，电池放置在机器人腹腔内。
 
 该四自由度步行机器人的步行姿态如下：
 
-{% img /images/mold/robot/walk4.gif 275 %}
+{% img /images/robot/walk4.gif 275 %}
 
 <cite>参考：浅草ギ研. 双足步行机器人制作入门. 科学出版社. 2011</cite>

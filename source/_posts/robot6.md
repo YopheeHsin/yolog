@@ -20,7 +20,7 @@ description:
 
 具体结构如下图示，两根受力接触杆为半椭圆形，在脚后跟处分别与等臂杠杆两端铰接，等臂杠杆与中间支架铰接，两接触杆铰链处与脚底板之间安装弹簧。
 
-{% img /images/mold/robot/robot61.jpg 275 %}
+{% img /images/robot/robot61.jpg 275 %}
 
 身体外侧的接触杆椭圆半径比内侧大，其高度低于内侧，故而落地支撑下压时机器人身体向外侧倾斜。这样在双足机器人步行时，左右脚交替落地支撑，可以调整身体左右摆动，调整重心。
 
@@ -30,6 +30,6 @@ description:
 
 双足机器人步行体态和重心路径见下面示意图：
 
-{% img /images/mold/robot/robot62.jpg 275 %}
+{% img /images/robot/robot62.jpg 275 %}
 
 <cite>参考：Steven H. Collins. A Three-Dimensional Passive-Dynamic Walking Robot with Two Legs and Knees</cite>

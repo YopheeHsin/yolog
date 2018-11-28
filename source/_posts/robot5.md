@@ -16,6 +16,6 @@ ACM-R5采用模块化设计，所有关节结构相同，不仅节约设计和�
 
 ACM-R5的关节设计巧妙，每个关节有两个自由度，由两个伺服电机带动十字转轴上的齿轮来转动。关节由伸缩膜覆盖来防水，关节连接处用O型圈密封，具体机械结构如下图示：
 
-{% img /images/mold/robot/robot52.jpg 275 %}
+{% img /images/robot/robot52.jpg 275 %}
 
-{% img /images/mold/robot/robot51.jpg 275 %}
+{% img /images/robot/robot51.jpg 275 %}
