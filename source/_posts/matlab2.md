@@ -22,10 +22,10 @@ PID控制是将误差信号e(t)的比例(P)，积分(I)和微分(D)通过线性�
 \[{G_O}(s) = \frac{1}{{(2s + 1)(5s + 1)}}\]
 {% endraw %}
 
-<pre>
+``` MATLAB
 clc; clear all; close all;
 Go = tf(1,conv([2,1],[5,1]));
-</pre>
+```
 
 2. 比例控制，输出与输入偏差成比例，即直接将误差信号放大或缩小。比例控制的传递函数为：
 
@@ -35,15 +35,15 @@ Go = tf(1,conv([2,1],[5,1]));
 
 取不同的比例系数，绘制系统的单位阶跃响应曲线：
 
-<pre>
+``` MATLAB
 Kp = [0.5,2,5,10];
 for m = 1:4
-　　sys = feedback(Kp(m)*Go,1);
-　　step(sys); hold on;
+    sys = feedback(Kp(m)*Go,1);
+    step(sys); hold on;
 end
-</pre>
+```
 
-<img src="http://xinyuefei.com/wp-content/uploads/P.gif" alt="比例控制的单位阶跃响应曲线" />
+{% img /images/matlab/P.gif 275 %}
 
 随着K<sub>P</sub>值的增大，系统响应速度加快，但系统的超调也随着增加，调节时间也随着增长。当K<sub>P</sub>增大到一定值后，闭环系统将趋于不稳定。
 
@@ -57,17 +57,17 @@ end
 
 取不同的微分系数，绘制系统的单位阶跃响应曲线：
 
-<pre>
+``` MATLAB
 Kp = 10;
 Td = [0,0.4,1,4];
 for m = 1:4
-　　G1 = tf([Kp*Td(m),Kp],[0,1]);
-　　sys = feedback(G1*Go,1);
-　　step(sys); hold on;
+    G1 = tf([Kp*Td(m),Kp],[0,1]);
+    sys = feedback(G1*Go,1);
+    step(sys); hold on;
 end
-</pre>
+```
 
-<img src="http://xinyuefei.com/wp-content/uploads/PD.gif" alt="微分控制的单位阶跃响应曲线" />
+{% img /images/matlab/PD.gif 275 %}
 
 随着T<sub>D</sub>值的增大，系统超调量逐渐减小，动态特征有改善。
 
@@ -83,17 +83,17 @@ end
 
 取不同的积分系数，绘制系统的单位阶跃响应曲线：
 
-<pre>
+``` MATLAB
 Kp = 2;
 Ti = [3,6,12,24];
 for m = 1:4
-　　G1 = tf([Kp,Kp/Ti(m)],[1,0]);
-　　sys = feedback(G1*Go,1);
-　　step(sys); hold on;
+    G1 = tf([Kp,Kp/Ti(m)],[1,0]);
+    sys = feedback(G1*Go,1);
+    step(sys); hold on;
 end
-</pre>
+```
 
-<img src="http://xinyuefei.com/wp-content/uploads/PI.gif" alt="积分控制的单位阶跃响应曲线" />
+{% img /images/matlab/PI.gif 275 %}
 
 加入积分控制后，消除了系统稳态误差，但随着T<sub>I</sub>值的增大，达到稳态的过渡时间也逐渐加长。
 
@@ -107,16 +107,16 @@ end
 
 取适当的比例、积分、微分系数，绘制系统的单位阶跃响应曲线：
 
-<pre>
+``` MATLAB
 Kp = 100;
 Ti = 2.2;
 Td = 7;
 G1 = tf([Kp(m)*Td(m),Kp(m),Kp(m)/Ti(m)],[0,1,0]); 
 sys = feedback(G1*Go,1);
 step(sys);
-</pre>
+```
 
-<img src="http://xinyuefei.com/wp-content/uploads/PID.gif" alt="PID控制的单位阶跃响应曲线" />
+{% img /images/matlab/PID.gif 275 %}
 
 PID控制通过积分作用消除误差，而微分控制可缩小超调量、加快系统响应，是综合了PI控制和PD控制长处并去除其短处的控制。
 
