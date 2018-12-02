@@ -31,3 +31,6 @@ var header = document.querySelector('header');
 addEventListener(btn, 'click', function() {
 	toggleClass(header, 'open');
 });
+
+var about_link_node = document.createElement('li');
+document.querySelector('.category-list').appendChild(about_link_node);
