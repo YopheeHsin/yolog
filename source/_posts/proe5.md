@@ -2,7 +2,7 @@
 title: 新安装Pro/E后的常用配置
 date: 2013-03-05 00:00:00
 categories: Uncategorized
-keywords: Pro/E
+keywords: Pro/E常用配置, Pro/E
 description: 新安装Pro/E后的常用配置及工程图配置文件生成方法
 ---
 

@@ -3,7 +3,7 @@ title: Flash动画基础班教学笔记（一） – 初识Flash
 date: 2012-08-02 00:00:00
 categories: Uncategorized
 keywords: Flash基础, Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: Flash8软件发展、功能、特征，软件各面板功能及操作，时间轴、图层、元件、库等基本概念
 ---
 
 ## Flash8软件简介（软件发展、功能、特征）

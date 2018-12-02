@@ -3,7 +3,7 @@ title: Flash动画基础班教学笔记（六） – Flash深入
 date: 2012-08-09 00:00:00
 categories: Uncategorized
 keywords: Flash深入, Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: Flash的三维实现、官方实例、反编译（破解）
 ---
 
 ## Flash中的三维实现

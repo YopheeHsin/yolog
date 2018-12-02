@@ -2,7 +2,7 @@
 title: Pro/E绘图格式的创建
 date: 2012-11-05 00:00:00
 categories: Uncategorized
-keywords: Pro/E
+keywords: Pro/E绘图格式, Pro/E
 description: Pro/E绘图格式的创建过程
 ---
 
@@ -26,13 +26,11 @@ Pro/E绘图格式的创建过程为：
 
 {% raw %}
 <table>
-	<thead>
-		<tr>
-			<th>&amp;model_name</th>
-			<th>显示模型名称</th>
-		</tr>
-	</thead>
 	<tbody>
+		<tr>
+			<td>&amp;model_name</td>
+			<td>显示模型名称</td>
+		</tr>
 		<tr>
 			<td>&amp;todays_date</td>
 			<td>显示当前日期</td>

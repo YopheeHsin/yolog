@@ -2,8 +2,8 @@
 title: 机器人设计的Uncanny Valley理论
 date: 2012-11-04 00:00:00
 categories: Uncategorized
-keywords: 机器人
-description: 
+keywords: 恐怖谷理论, 机器人
+description: “恐怖谷”理论（The uncanny valley）认为，当机器人的相似度逐渐接近人类，但未达到足够逼真时，会引起人类的反感和排斥
 ---
 
 “恐怖谷”理论（The uncanny valley）是一个关于人类对机器人感觉的假设，用在机器人、三维动画、心理学等领域。该理论认为，当机器人的相似度逐渐接近人类，但未达到足够逼真时，会引起人类的反感和排斥，这些机器人怪异、恐怖、行尸走肉一般。

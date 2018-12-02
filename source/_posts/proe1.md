@@ -2,7 +2,7 @@
 title: Pro/E装配连接约束及相对运动关系
 date: 2012-10-24 00:00:00
 categories: Uncategorized
-keywords: Pro/E
+keywords: Pro/E装配连接约束, Pro/E
 description: Pro/E装配及运动仿真中，定义零件连接方式时，各约束关系、相对运动关系、零件自由度
 ---
 
@@ -12,7 +12,7 @@ Pro/E装配及运动仿真中，定义零件连接方式时，各约束关系、
 <table>
 	<thead>
 		<tr>
-			<th>连接类型</th>
+			<th width="110">连接类型</th>
 			<th>约束定义</th>
 			<th>相对运动关系</th>
 		</tr>
@@ -41,7 +41,7 @@ Pro/E装配及运动仿真中，定义零件连接方式时，各约束关系、
 		<tr>
 			<td><strong>平面/Planar</strong></td>
 			<td>一个平面匹配/对齐</td>
-			<td>即可在一个平面内平移，也可绕垂直该平面的轴线转动</td>
+			<td>既可在一个平面内平移，也可绕垂直该平面的轴线转动</td>
 		</tr>
 		<tr>
 			<td><strong>球/Ball</strong></td>

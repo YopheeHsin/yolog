@@ -3,7 +3,7 @@ title: STC12C5A60S2无线遥控流水灯
 date: 2012-11-24 00:00:00
 categories: Uncategorized
 keywords: Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: 在面包板上搭建STC12C5A60S2单片机最小系统，并连接8个LED发光二极管组成流水灯，编写程序，用R06A无线遥控控制流水灯的方向
 ---
 
 STC12C5A60S2是STC生产的新一代单片机，指令代码完全兼容传统8051。本文描述在面包板上搭建STC12C5A60S2单片机最小系统，并连接8个LED发光二极管组成流水灯，编写程序，用R06A无线遥控控制流水灯的方向。主要目的是熟悉单片机最小系统和R06A无线遥控的控制方式。
@@ -99,11 +99,11 @@ STC12C5A60S2是STC生产的新一代单片机，指令代码完全兼容传统80
 
 电路原理图：
 
-{% img /images/uploads/mcu21.jpg 275 %}
+{% img /images/mcu/mcu21.jpg 275 %}
 
 完成接线后的实际电路：
 
-{% img /images/uploads/mcu22.jpg 275 %}
+{% img /images/mcu/mcu22.jpg 275 %}
 
 C程序：
 

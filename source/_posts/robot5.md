@@ -2,8 +2,8 @@
 title: 蛇形机器人关节结构设计
 date: 2012-11-06 00:00:00
 categories: Uncategorized
-keywords: 机器人
-description: 
+keywords: 蛇形机器人, 机器人
+description: 两栖蛇形机器人ACM-R5，它不仅能在陆地爬行，还能在水中游动
 ---
 
 蛇形机器人是仿生机器人家族中的一员，具有生物蛇的运动机理和行为方式，适应各种地形，并可攀爬障碍物，在许多领域具有广泛应用前景。

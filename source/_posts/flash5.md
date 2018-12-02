@@ -3,7 +3,7 @@ title: Flash动画基础班教学笔记（五） – Flash简单动作编程
 date: 2012-08-08 00:00:00
 categories: Uncategorized
 keywords: Flash简单动作编程, Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: Flash动画ActionScript命令，时间轴控制、浏览器/网络、按钮的行为
 ---
 
 ## 常用的ActionScript命令

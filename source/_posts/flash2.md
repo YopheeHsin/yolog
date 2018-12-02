@@ -3,14 +3,14 @@ title: Flash动画基础班教学笔记（二） – Flash绘图
 date: 2012-08-03 00:00:00
 categories: Uncategorized
 keywords: Flash绘图, Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: Flash绘图的选择工具、绘图工具、着色工具、变形工具、橡皮擦工具
 ---
 
 ## 选择工具（选择、部分选取、套索）
 
 选择
 
-1. 选择后可拖动ƒ
+1. 选择后可拖动
 2. 按Alt拖动为复制
 3. 按Shift可多选
 4. 可框选

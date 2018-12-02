@@ -3,7 +3,7 @@ title: Flash动画基础班教学笔记（三） – Flash核心动画
 date: 2012-08-04 00:00:00
 categories: Uncategorized
 keywords: Flash核心动画, Flash动画
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+description: Flash逐帧动画、动作补间动画和形状补间动画
 ---
 
 {% img /images/flash/flash31.gif 275 %}
@@ -23,12 +23,12 @@ description: 康佳一款电视的电源按钮。在回针下底针板上设计�
 	</thead>
 	<tbody>
 		<tr>
-			<td>概念</td>
+			<td><strong>概念</strong></td>
 			<td>在一个关键帧中设置一个元件，然后在另外一个关键帧改变这个元件的大小、颜色、位置、透明度等，FLASH据二者间形状创建的动画</td>
 			<td>在一个关键帧中绘制一个形状，然后在另外一个关键帧更改或绘制另一个形状，FLASH据二者间形状创建的动画</td>
 		</tr>
 		<tr>
-			<td rowspan="2">组成元素</td>
+			<td rowspan="2"><strong>组成元素</strong></td>
 			<td>元件（包括影片剪辑、图形、按钮），文字，位图，组合</td>
 			<td>形状</td>
 		</tr>
@@ -37,7 +37,7 @@ description: 康佳一款电视的电源按钮。在回针下底针板上设计�
 			<td>不能使用元件、文字、位图、组合，只有把它们“分离”打散成形状才可以使用</td>
 		</tr>
 		<tr>
-			<td>作用</td>
+			<td><strong>作用</strong></td>
 			<td>实现一个元件的大小、位置、颜色、透明度等的变化</td>
 			<td>实现两个形状间的变化或一个形状的大小、位置、颜色等的变化</td>
 		</tr>
@@ -47,7 +47,7 @@ description: 康佳一款电视的电源按钮。在回针下底针板上设计�
 
 给Flash添加使用声音时，同步设置为“事件”，则声音播放与时间轴无关；设置为“数据流”，声音播放和动画同步。
 
-实例操作
+## 实例操作
 
 {% img /images/flash/flash32.gif 275 %}
 

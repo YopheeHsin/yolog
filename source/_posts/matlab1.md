@@ -2,8 +2,8 @@
 title: 用MATLAB演示采样频率和点数对FFT的影响
 date: 2013-05-18 00:00:00
 categories: Uncategorized
-keywords: MATLAB
-description: 康佳一款电视的电源按钮。在回针下底针板上设计防震胶棒，回针底部闭空底针板，这样合模时回针推动防震胶棒使面针板和底针板带动顶针先复位
+keywords: FFT, MATLAB
+description: 在MATLAB中指定不同的采样频率和采样点数，调用函数做FFT计算，并绘图显示
 ---
 
 FFT是指离散傅里叶变换的快速算法，可将时域信号变换为频域。
