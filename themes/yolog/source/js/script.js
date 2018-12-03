@@ -32,5 +32,7 @@ addEventListener(btn, 'click', function() {
 	toggleClass(header, 'open');
 });
 
-var about_link_node = document.createElement('li');
-document.querySelector('.category-list').appendChild(about_link_node);
+var aboutNode = document.createElement('li');
+aboutNode.className = 'category-list-item';
+aboutNode.innerHTML = '<a class="category-list-link" href="/uncategorized/about.html">About</a>';
+document.querySelector('.category-list').appendChild(aboutNode);

@@ -13,3 +13,17 @@ email: &#109;&#97;&#105;&#108;&#64;&#120;&#105;&#110;&#121;&#117;&#101;&#102;&#1
 btw:
 
 <a href="http://datong0.com/" target="_blank" alt="网站建设"><img src="/images/else/datong0.jpg" style="width: 104px; margin: 0" /></a>
+
+
+{% raw %}
+<style>
+.title .info,
+.pagination {
+	visibility: hidden;
+}
+.title .info {
+	height: 0;
+	margin-top: 0;
+}
+</style>
+{% endraw %}
