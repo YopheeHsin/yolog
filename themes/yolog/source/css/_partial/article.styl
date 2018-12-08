@@ -9,7 +9,7 @@
 			color: color-gray
 
 .content
-	p, table, h1, h2, h3, ul, ol, dl, img
+	p, table, h1, h2, h3, ul, ol, dl, img, .scrollable-wrapper
 		margin: 1.25em 0
 
 	ul, ol, dl
@@ -62,3 +62,11 @@
 	blockquote
 		padding: 0 2.5rem
 		font-style: italic
+
+	.scrollable-wrapper
+		width: 100%
+		height: auto
+		overflow: auto
+		-webkit-overflow-scrolling: touch
+		svg
+			margin: 0 auto
