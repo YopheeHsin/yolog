@@ -47,29 +47,23 @@ function highlightUtil(str, options) {
     result += '<figcaption>' + caption + '</figcaption>';
   }
 
-  result += '<table><tr>';
-
-  if (gutter) {
-    result += '<td class="gutter"><pre>' + numbers + '</pre></td>';
-  }
-
-  result += '<td class="code">' + before + content + after + '</td>';
-  result += '</tr></table></figure>';
+  result += before + content + after;
+  result += '</figure>';
 
   return result;
 }
 
 function formatLine(line, lineno, marked, options) {
+  if (!line) line = '<br>'
   var useHljs = options.hljs || false;
-  var res = useHljs ? '' : '<span class="line';
+  var res = useHljs ? '' : '<div class="line';
   if (marked.indexOf(lineno) !== -1) {
     // Handle marked lines.
-    res += useHljs ? '<mark>' + line + '</mark>' : ' marked">' + line + '</span>';
+    res += useHljs ? '<mark>' + line + '</mark>' : ' marked">' + line + '</div>';
   } else {
-    res += useHljs ? line : '">' + line + '</span>';
+    res += useHljs ? line : '">' + line + '</div>';
   }
 
-  res += '<br>';
   return res;
 }
 
