@@ -17,14 +17,15 @@ highlight-gutter-b     = #eff2f3
 highlight-deletion     = #fdd
 highlight-addition     = #dfd
 
+pre
+	white-space: pre-wrap
+	word-wrap: break-word
+
 $code-block
 	background-color: highlight-background
 	margin: 1.25rem 0
-	padding: 1rem 0
 	border-radius: 3px
 	color: highlight-foreground
-	overflow: auto
-	-webkit-overflow-scrolling: touch
 
 .content
 	pre, code
@@ -35,15 +36,28 @@ $code-block
 	> pre
 		@extend $code-block
 		padding: 1rem
+		overflow: scroll
+		-webkit-overflow-scrolling: touch
 		code
 			padding: 0
 
 	.highlight
 		@extend $code-block
+		white-space: pre-wrap
 		pre
 			margin: 0
 			padding: 0
 			border: none
+			white-space: pre
+			word-wrap: normal
+			overflow: scroll
+			-webkit-overflow-scrolling: touch
+			.line
+				padding: 0 1rem
+				&:first-child
+					padding-top: 1rem
+				&:last-child
+					padding-bottom: 1rem
 		table
 			width: auto
 			margin: 0
