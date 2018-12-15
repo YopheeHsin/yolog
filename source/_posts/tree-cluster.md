@@ -1,10 +1,9 @@
 ---
 title: 绘制D3树状图tree和集群图cluster
-categories: D3.js
-keywords: 'D3, D3.js'
-description: d3
 date: 2018-12-08 00:00:00
-tags:
+categories: D3.js
+keywords: D3树状图, D3 tree, D3集群图, D3 cluster, D3
+description: 绘制D3树状图tree和集群图cluster的详细步骤
 ---
 
 <div class="scrollable-wrapper"><svg id="d3"></svg></div>
@@ -180,6 +179,8 @@ node.append('text')
     .clone(true).lower()
     .attr('stroke', '#f2f6ed')
 ```
+
+<cite>参考：https://beta.observablehq.com/@mbostock/d3-cluster-dendrogram</cite>
 
 
 {% raw %}
