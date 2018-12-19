@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		svg {
+			overflow: visible;
+		}
+        svg circle {
+            fill: #f2f6ed;
+            stroke: #83887c;
+            cursor: pointer;
+        }
+        svg circle:hover {
+            stroke: #232520;
+        }
+	</style>
+</head>
+<body>
+<div id="app">
+
+<svg id="d3" width="120" height="120" viewBox="0 0 120 120">
+    <g transform="translate(10, 10)" stroke-width="1.5">
+        <g stroke="#83887c" fill="none">
+            <path :d="`M0,0C${x1},${y1} ${x2},${y2} 100,100`"></path>
+        </g>
+        <g transform="translate(0, 0)">
+            <circle r="5"></circle>
+        </g>
+        <g transform="translate(100, 100)">
+            <circle r="5"></circle>
+        </g>
+    </g>
+</svg>
+
+</div>
+
+<script src="../scripts/vue.min.js"></script>
+<script>
+const app = new Vue({
+    el: '#app',
+    data: {
+        x1: '50',
+        y1: '0',
+        x2: '50',
+        y2: '100'
+    }
+})
+// const svg = d3.select('body')
+// 	.append('svg')
+//     .attr('width', 100)
+//     .attr('height', 100)
+//     .attr('viewBox', '0 0 100 100')
+
+// const cubicBezierStr = '.25,2,.25,1'
+// const cubicBezierArr = cubicBezierStr.split(',')
+
+// svg.append('g')
+//     .attr('fill', 'none')
+//     .attr('stroke', '#83887c')
+//     .attr('stroke-width', 1.5)
+//     .append('path')
+//     .attr('d', d => `
+//         M0, 0
+//         C${cubicBezierArr[0]*100}, ${cubicBezierArr[1]*100}
+//         ${cubicBezierArr[2]*100}, ${cubicBezierArr[3]*100}
+//         100, 100
+//     `)
+</script>
+</body>
+</html>
