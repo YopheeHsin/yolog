@@ -1,7 +1,18 @@
 ---
-title: textures
-tags:
+title: 使用预定义图案pattern填充SVG元素
+date: 2018-12-23 00:00:00
+categories: Code Snippets
+keywords: pattern, SVG
+description: 
 ---
+
+<div class="scrollable-wrapper"><svg id="pattern"></svg></div>
+
+{% raw %}
+<script>
+
+</script>
+{% endraw %}
 
 
 Textures.js
