@@ -83,3 +83,37 @@ Returns:objectin format
 ## `Snap.filter`
 
 ## ``
+
+## ``
+
+## `Snap.set()`
+
+创建集合并为其设定元素值
+
+``` JavaScript
+const r = paper.rect(0, 0, 10, 10),
+    s1 = Snap.set(), // 空set
+    s2 = Snap.set(r, paper.circle(100, 100, 20)) // 预设定值的set
+```
+
+## `Snap.sin()`
+
+求正弦值，与Math.sin()返回弧度值不同的是，它返回角度值
+
+## `Snap.snapTo()`
+
+将数值取整到参考网格，类似于绘图软件中的对齐到网格
+
+参数为values, value, tolerance
+values为网格数值数组或网格步长；value为待调整数值；tolerance是触发调整的距离目标值的最大值，默认为10
+
+## `Snap.tan()`
+
+求正切值，与Math.tan()返回弧度值不同的是，它返回角度值
+
+## `Snap.url()`
+
+``` JavaScript
+Snap.url('yophee') // 返回 "url('#yophee')"
+```
+

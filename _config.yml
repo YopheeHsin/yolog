@@ -61,7 +61,7 @@ default_category: uncategorized
 category_map:
   Code Snippets: code-snippets
   D3.js: d3
-  Snap.svg: snapsvg
+  SVG: svg
   Uncategorized: uncategorized
 tag_map:
 
