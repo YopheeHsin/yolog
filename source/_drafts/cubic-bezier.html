@@ -4,19 +4,26 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+        #app {
+            margin: 50px;
+            text-align: center;
+        }
 		svg {
 			overflow: visible;
 		}
         svg circle {
             fill: #f2f6ed;
             stroke: #83887c;
+        }
+        svg circle.draggable {
             cursor: pointer;
         }
-        svg circle:hover {
+        svg circle.draggable:hover {
             stroke: #232520;
         }
 	</style>
 </head>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <body>
 <div id="app">
 
@@ -24,12 +31,20 @@
     <g transform="translate(10, 10)" stroke-width="1.5">
         <g stroke="#83887c" fill="none">
             <path :d="`M0,0C${x1},${y1} ${x2},${y2} 100,100`"></path>
+            <line x1="0" y1="0" :x2="x1" :y2="y1"></line>
+            <line x1="100" y1="100" :x2="x2" :y2="y2"></line>
         </g>
         <g transform="translate(0, 0)">
             <circle r="5"></circle>
         </g>
         <g transform="translate(100, 100)">
             <circle r="5"></circle>
+        </g>
+        <g :transform="`translate(${x1}, ${y1})`" @mousedown="handleMousedown" @touchstart="handleMousedown">
+            <circle r="5" class="draggable"></circle>
+        </g>
+        <g :transform="`translate(${x2}, ${y2})`">
+            <circle r="5" class="draggable"></circle>
         </g>
     </g>
 </svg>
@@ -41,32 +56,60 @@
 const app = new Vue({
     el: '#app',
     data: {
-        x1: '50',
-        y1: '0',
-        x2: '50',
-        y2: '100'
+        initX1: 50,
+        initY1: 0,
+        x1: 50,
+        y1: 0,
+        x2: 50,
+        y2: 100,
+        
+        dragState: {
+            dragging: false,
+            mouseLeft: 0,
+            mouseTop: 0,
+        }
+    },
+    methods: {
+        handleMousedown(event) {
+            const isTouch = !!event.touches
+            if (isTouch && event.touches.length > 1) return
+
+            this.dragging = true
+
+            this.dragState = {
+                dragging: true,
+                mouseLeft: event.clientX,
+                mouseTop: event.clientY
+            }
+
+            document.onselectstart = () => false
+            document.ondragstart = () => false
+
+            const handleMouseMove = event => {
+                const deltaLeft = event.clientX - this.dragState.mouseLeft
+                const deltaTop = event.clientY - this.dragState.mouseTop
+                this.x1 = 50 + deltaLeft
+                this.y1 = deltaTop
+            }
+
+            const handleMouseUp = event => {
+                if (this.dragState.dragging) {
+                    this.dragState.dragging = false
+                    this.initX1 = this.x1
+                    this.initY1 = this.y1
+                }
+
+                document.removeEventListener('mousemove', handleMouseMove)
+                document.removeEventListener('mouseup', handleMouseUp)
+                document.onselectstart = null
+                document.ondragstart = null
+            }
+
+            document.addEventListener('mousemove', handleMouseMove)
+            document.addEventListener('mouseup', handleMouseUp)
+        }
     }
 })
-// const svg = d3.select('body')
-// 	.append('svg')
-//     .attr('width', 100)
-//     .attr('height', 100)
-//     .attr('viewBox', '0 0 100 100')
-
-// const cubicBezierStr = '.25,2,.25,1'
-// const cubicBezierArr = cubicBezierStr.split(',')
-
-// svg.append('g')
-//     .attr('fill', 'none')
-//     .attr('stroke', '#83887c')
-//     .attr('stroke-width', 1.5)
-//     .append('path')
-//     .attr('d', d => `
-//         M0, 0
-//         C${cubicBezierArr[0]*100}, ${cubicBezierArr[1]*100}
-//         ${cubicBezierArr[2]*100}, ${cubicBezierArr[3]*100}
-//         100, 100
-//     `)
 </script>
 </body>
 </html>

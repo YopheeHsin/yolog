@@ -77,7 +77,7 @@ const tool = (root => {
 })(window || this)
 ```
 
-## 定义纹理类
+## 纹理类
 
 ``` JavaScript
 class LineTexture {
