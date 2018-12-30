@@ -96,9 +96,9 @@ class LineTexture {
         const s = this.size
         switch (orientation) {
             case '0/8':
-                return `M ${s / 4}, 0 l 0, ${s} M ${3 / 4 * s}, 0 l 0, ${s}`
+                return `M${s/4},0 l0,${s} M${3/4*s},0 l0,${s}`
             case '1/8':
-                return `M ${s / 4}, 0 l ${s / 2}, ${s} M ${-s / 4}, 0 l ${s / 2}, ${s} M ${s * 3 / 4}, 0 l ${s / 2}, ${s}`
+                return `M${s/4},0 l${s/2},${s} M${-s/4},0 l${s/2},${s} M${s*3/4},0 l${s/2},${s}`
             case '2/8':
                 // 省略...
         }
@@ -145,7 +145,7 @@ class LineTexture {
     }
 
     random() {
-        return `${Math.random().toString(36)}00000000000000000`
+        return Math.random().toString(36)
             .replace(/[^a-z]+/g, '')
             .slice(0, 5)
     }
@@ -248,23 +248,23 @@ class LineTexture {
         const s = this.size
         switch (orientation) {
             case '0/8':
-                return `M ${s / 4}, 0 l 0, ${s} M ${3 / 4 * s}, 0 l 0, ${s}`
+                return `M${s/4},0 l0,${s} M${3/4*s},0 l0,${s}`
             case '1/8':
-                return `M ${s / 4}, 0 l ${s / 2}, ${s} M ${-s / 4}, 0 l ${s / 2}, ${s} M ${s * 3 / 4}, 0 l ${s / 2}, ${s}`
+                return `M${s/4},0 l${s/2},${s} M${-s/4},0 l${s/2},${s} M${s*3/4},0 l${s/2},${s}`
             case '2/8':
-                return `M 0, ${s} l ${s}, ${-s} M ${-s / 4}, ${s / 4} l ${s / 2}, ${-s / 2} M ${3 / 4 * s}, ${5 / 4 * s} l ${s / 2}, ${-s / 2}`
+                return `M0,${s} l${s},${-s} M${-s/4},${s/4} l${s/2},${-s/2} M${3/4*s},${5/4*s} l${s/2},${-s/2}`
             case '3/8':
-                return `M 0, ${3 / 4 * s} l ${s}, ${-s / 2} M 0, ${s / 4} l ${s}, ${-s / 2} M 0, ${s * 5 / 4} l ${s}, ${-s / 2}`
+                return `M0,${3/4*s} l${s},${-s/2} M0,${s/4} l${s},${-s/2} M0,${s*5/4} l${s},${-s/2}`
             case '4/8':
-                return `M 0, ${s / 4} l ${s}, 0 M 0, ${3 / 4 * s} l ${s}, 0`
+                return `M0,${s/4} l${s},0 M0,${3/4*s} l${s},0`
             case '5/8':
-                return `M 0, ${-s / 4} l ${s}, ${s / 2} M 0, ${s / 4} l ${s}, ${s / 2} M 0, ${s * 3 / 4} l ${s}, ${s / 2}`
+                return `M0,${-s/4} l${s},${s/2} M0,${s/4} l${s},${s/2} M0,${s*3/4} l${s},${s/2}`
             case '6/8':
-                return `M 0, 0 l ${s}, ${s} M ${-s / 4}, ${3 / 4 * s} l ${s / 2}, ${s / 2} M ${s * 3 / 4}, ${-s / 4} l ${s / 2}, ${s / 2}`
+                return `M0,0 l${s},${s} M${-s/4},${3/4*s} l${s/2},${s/2} M${s*3/4},${-s/4} l${s/2},${s/2}`
             case '7/8':
-                return `M ${-s / 4}, 0 l ${s / 2}, ${s} M ${s / 4}, 0 l ${s / 2}, ${s} M ${s * 3 / 4}, 0 l ${s / 2}, ${s}`
+                return `M${-s/4},0 l${s/2},${s} M${s/4},0 l${s/2},${s} M${s*3/4},0 l${s/2},${s}`
             default:
-                return `M ${s / 2}, 0 l 0, ${s}`
+                return `M${s/2},0 l0,${s}`
         }
     }
 
@@ -309,7 +309,7 @@ class LineTexture {
     }
 
     random() {
-        return `${Math.random().toString(36)}00000000000000000`
+        return Math.random().toString(36)
             .replace(/[^a-z]+/g, '')
             .slice(0, 5)
     }
