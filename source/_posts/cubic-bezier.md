@@ -14,11 +14,14 @@ description: 用Vue实现响应式SVG来简单模拟cubic-bezier三次贝塞尔�
 .svg-wrapper {
 	margin-top: 1.25em;
 }
-svg {
+.svg-wrapper svg {
 	position: relative;
 	display: block;
 	margin: 0 auto;
 	overflow: visible;
+	-webkit-touch-callout: none;
+	-webkit-user-select:none;
+	user-select: none;
 }
 svg circle.draggable {
 	fill: #f2f6ed;
@@ -169,6 +172,7 @@ computed: {
 ``` JavaScript
 methods: {
     handleStart(event, point) {
+    	event.preventDefault()
         const isTouch = !!event.touches
         if (isTouch && event.touches.length > 1) return
         if (isTouch) event = event.touches[0]
@@ -270,6 +274,7 @@ const app = new Vue({
 
     methods: {
         handleStart(event, point) {
+        	event.preventDefault()
             const isTouch = !!event.touches
             if (isTouch && event.touches.length > 1) return
             if (isTouch) event = event.touches[0]
