@@ -29,7 +29,7 @@ for each y from top to bottom
 
 ## 图片像素
 
-异步加载图片，用canvas做中介，将图片绘制到canvas画布上，使用画布的getImageData方法获取图片像素信息，该方法返回的imageData对象的data数组中，每个像素储存有四条信息，其中：
+异步加载图片，用canvas做中介，将图片绘制到canvas画布上，使用画布的getImageData方法获取图片像素信息，该方法返回的imageData对象的data是一个Uint8ClampedArray数组，图像的每个像素信息占4个元素储存，其中：
 
 - R - 红色 (0-255)
 - G - 绿色 (0-255)
