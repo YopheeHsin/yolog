@@ -60,6 +60,7 @@ index_generator:
 default_category: uncategorized
 category_map:
   Code Snippets: code-snippets
+  Vue: vue
   D3.js: d3
   SVG: svg
   Uncategorized: uncategorized
