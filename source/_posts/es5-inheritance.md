@@ -1,7 +1,7 @@
 ---
 title: ES5中的继承
 date: 2019-02-11 00:00:00
-categories: Uncategorized
+categories: JavaScript
 keywords: JS类, JS继承, JavaScript
 description: JavaScript中继承的实现，包括类式继承、构造函数继承、组合继承、原型式继承、寄生式继承、寄生组合式继承
 ---

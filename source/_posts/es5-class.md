@@ -1,7 +1,7 @@
 ---
 title: ES5中类的封装
 date: 2019-01-19 00:00:00
-categories: Uncategorized
+categories: JavaScript
 keywords: JS类, JS属性和方法, JavaScript
 description: JavaScript中类的封装、私有属性和方法、公有属性和方法、特权方法、公共属性和方法、静态属性和方法
 ---

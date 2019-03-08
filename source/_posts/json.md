@@ -1,7 +1,7 @@
 ---
 title: 何为JSON
 date: 2013-02-03 00:00:00
-categories: Uncategorized
+categories: JavaScript
 keywords: JSON
 description: JSON即JavaScript Object Notation，JavaScript对象表示法，是一种流行的数据交换方式，易于程序员阅读和编写、程序解析和生成
 ---

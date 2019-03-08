@@ -63,6 +63,7 @@ category_map:
   Vue: vue
   D3.js: d3
   SVG: svg
+  JavaScript: js
   Uncategorized: uncategorized
 tag_map:
 
