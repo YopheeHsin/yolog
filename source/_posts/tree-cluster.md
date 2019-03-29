@@ -180,7 +180,7 @@ node.append('text')
     .attr('stroke', '#f2f6ed')
 ```
 
-<cite>参考：https://beta.observablehq.com/@mbostock/d3-cluster-dendrogram</cite>
+<cite>参考：https://observablehq.com/@d3/cluster-dendrogram</cite>
 
 
 {% raw %}

@@ -105,8 +105,8 @@ for (let y = 0; y < height; y++) {
 <div class="scrollable-wrapper"><svg id="dithering"></svg></div>
 
 <cite>参考：
-https://beta.observablehq.com/@tmcw/dithering
-https://beta.observablehq.com/@tmcw/final-step-of-dithering-to-svg</cite>
+https://observablehq.com/@tmcw/dithering
+https://observablehq.com/@tmcw/final-step-of-dithering-to-svg</cite>
 
 
 {% raw %}
