@@ -1,5 +1,5 @@
 ---
-title: 文本打散分离
+title: splitText文本打散分离
 date: 2019-04-03 00:00:00
 categories: Uncategorized
 keywords: SplitText, Lettering.js
