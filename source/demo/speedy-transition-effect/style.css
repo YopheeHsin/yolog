@@ -1,14 +1,17 @@
 * {
 	box-sizing: border-box;
 }
-
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
 body {
+	position: relative;
 	margin: 0;
 	background-color: #f1f1f1;
 	font-family: Futura, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow: hidden;
 }
 .loading::before {
 	content: '';
@@ -54,7 +57,6 @@ body {
 	height: 300%;
 	background-image: url(noise.png);
 	animation: grained .5s steps(20) infinite;
-	overflow: hidden;
 }
 @keyframes grained {
 	0% { transform: translate(-10%, 10%); }

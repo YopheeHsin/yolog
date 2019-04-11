@@ -9,6 +9,12 @@ document.querySelector('.category-list').appendChild(aboutNode);
 
 
 function openIframe(url) {
+	var reg = /iphone|android|symbianos|windows\sphone/g;
+	if (reg.test(navigator.userAgent.toLowerCase())) {
+		location.href = url;
+		return;
+	}
+
 	var body = document.body;
 	var wrapper = document.createElement('div');
 	wrapper.className = 'iframe-wrapper';
