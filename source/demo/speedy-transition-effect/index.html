@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>speedy-transition-effect</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+	<div class="deco deco--bg deco--bg-vert"></div>
+	<div class="deco deco--shape deco--shape-1"></div>
+	<div class="deco deco--shape deco--shape-2"></div>
+	<div class="slides">
+		<div class="slide slide--current">
+			<div class="slide__image" style="background-image:url(1.jpg)"></div>
+			<h2 class="slide__title">Prototype</h2>
+		</div>
+		<div class="slide">
+			<div class="slide__image" style="background-image:url(2.jpg)"></div>
+			<h2 class="slide__title">Constructor</h2>
+		</div>
+		<div class="slide">
+			<div class="slide__image" style="background-image:url(3.jpg)"></div>
+			<h2 class="slide__title">Singleton</h2>
+		</div>
+		<div class="slide">
+			<div class="slide__image" style="background-image:url(4.jpg)"></div>
+			<h2 class="slide__title">Observer</h2>
+		</div>
+		<div class="slide">
+			<div class="slide__image" style="background-image:url(5.jpg)"></div>
+			<h2 class="slide__title">Factory</h2>
+		</div>
+		<nav class="nav">
+			<button class="nav__button nav__button--previous">Previous</button>
+			<button class="nav__button nav__button--next">Next</button>
+		</nav>
+	</div>
+
+	<script src="/scripts/imagesloaded.pkgd.min.js"></script>
+	<script src='/scripts/splitText.js'></script>
+	<script src="/scripts/TweenMax.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

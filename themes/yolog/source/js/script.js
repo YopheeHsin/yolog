@@ -12,20 +12,24 @@ function openIframe(url) {
 	var body = document.body;
 	var wrapper = document.createElement('div');
 	wrapper.className = 'iframe-wrapper';
-	wrapper.innerHTML = '<iframe frameborder="0" src="' + url + '"></iframe><button class="iframe-btn"></button>'
+
+	var btn = document.createElement('button');
+	btn.className = 'iframe-btn';
+
+	wrapper.innerHTML = ('<iframe frameborder="0" src="' + url + '"></iframe>');
+	wrapper.appendChild(btn);
 	body.classList.add('over-hidden');
 	body.appendChild(wrapper);
-
-	setTimeout(function() {
-		wrapper.classList.add('open');
-	}, 0);
-
-	var btn = wrapper.querySelector('iframe-btn');
 
 	function remove() {
 		btn.removeEventListener('click', remove);
 		body.removeChild(wrapper);
 		body.classList.remove('over-hidden');
 	}
+
 	btn.addEventListener('click', remove);
+
+	setTimeout(function() {
+		wrapper.classList.add('open');
+	}, 0);
 }
