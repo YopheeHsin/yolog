@@ -6,12 +6,14 @@ keywords: 动效, TweenMax
 description: 
 ---
 
+TweenMax是GreenSock Animation Platform(GSAP)动画平台核心文件，包含动画和时间轴相关的核心功能、基础插件、时间曲线等。Tween功能可用来构建[补间动画](flash3.html)，Timeline功能可创建时间轴，精确控制和管理动画序列。这里使用TweenMax实现图片快速切换动效。
+
+单个切换区块对象，包含背景图片和使用[splitText](split-text.html)将文本打散分离的标题。
+
 ``` JavaScript
 class Slide {
     constructor(el) {
-        this.DOM = {
-            el
-        }
+        this.DOM = { el }
         this.DOM.img = this.DOM.el.querySelector('.slide__image')
         this.DOM.title = this.DOM.el.querySelector('.slide__title')
         splitText(this.DOM.title)
@@ -21,12 +23,12 @@ class Slide {
 }
 ```
 
+图片切换对象，包含一组切换区块、控制切换的button和事件、具体的切换动画实现等。难点是如何控制各动画元素的时间轴先后关系实现需要的动效。
+
 ``` JavaScript
 class Slides {
     constructor(el) {
-        this.DOM = {
-            el
-        }
+        this.DOM = { el }
         this.slides = []
         Array.from(this.DOM.el.querySelectorAll('.slide')).forEach(slide => this.slides.push(new Slide(slide)))
         this.slidesTotal = this.slides.length
@@ -86,29 +88,14 @@ class Slides {
                 scaleX: 0.8,
                 opacity: 0
             })
-            .set(upcomingTitle, {
-                y: direction === 'next' ? 600 : -600,
-                opacity: 0
-            })
-            .set(currentImg, {
-                transformOrigin: direction === 'next' ? '50% 100%' : '50% 0%'
-            })
+            // 省略...
             .to(currentImg, 0.3, {
                 ease: Power1.easeOut,
                 scaleY: 2,
                 scaleX: 0.85,
                 opacity: 0.5
             }, 'begin')
-            .to(currentImg, 0.5, {
-                ease: Expo.easeOut,
-                y: direction === 'next' ? -1 * winsize.height : winsize.height
-            }, 'begin+=0.2')
-            .to(currentTitle, 0.1, {
-                ease: Power1.easeOut,
-                y: direction === 'next' ? 12 : -12,
-                x: 4,
-                repeat: 9
-            }, 'begin+=0.2')
+            // 省略...
             .staggerTo(currentTitleLetters.sort((a, b) => 0.5 - Math.random()), 0.2, {
                 ease: Expo.easeOut,
                 cycle: {
@@ -117,22 +104,7 @@ class Slides {
                 },
                 opacity: 0
             }, 0.5 / currentTitleLettersTotal, 'begin+=0.6')
-            .to(upcomingImg, 0.2, {
-                ease: Expo.easeOut,
-                y: 0,
-                opacity: 0.3
-            }, 'begin+=1.05')
-            .to(upcomingImg, 0.6, {
-                ease: Elastic.easeOut.config(1, 0.7),
-                scaleX: 1,
-                scaleY: 1,
-                opacity: 1
-            }, 'begin+=1.1')
-            .to(upcomingTitle, 0.6, {
-                ease: Elastic.easeOut.config(1, 0.7),
-                y: 0,
-                opacity: 1
-            }, 'begin+=1.15')
+            // 省略...
             .set(currentTitleLetters, {
                 x: 0,
                 y: 0,
@@ -149,6 +121,8 @@ class Slides {
     }
 }
 ```
+
+图片切换实例，并使用imagesLoaded判断页面内图片是否加载完成。
 
 ``` JavaScript
 new Slides(document.querySelector('.slides'))
