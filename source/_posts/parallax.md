@@ -179,6 +179,8 @@ const scene = document.querySelector('.scene')
 new Parallax(scene)
 ```
 
+除了PC端的鼠标事件，也可监听移动设备方向和运动相关的事件deviceorientation和devicemotion。
+
 <cite>参考：https://github.com/wagerfield/parallax</cite>
 
 
