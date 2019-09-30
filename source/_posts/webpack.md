@@ -1,6 +1,6 @@
 ---
 title: webpack
-date: 2019-08-08 00:00:00
+date: 2019-09-30 00:00:00
 categories: Uncategorized
 keywords: webpack
 description: webpack
@@ -41,7 +41,6 @@ entry: {
     app: './src/app.js',
     vendors: './src/vendors.js'
 }
-
 ```
 
 ## output
@@ -169,7 +168,7 @@ module.exports = {
 }
 ```
 
-也可以使用webpack-dev-middleware实现热更新
+也可以使用webpack-dev-middleware实现热更新。
 
 ``` JavaScript server.js
 const express = require('express')
@@ -203,7 +202,7 @@ app.listen(3000, function () {
 - chunkhash: 和打包的chunk相关，不同entry会生成不同的chunkhash
 - contenthash: 由文件内容生成
 
-JS文件
+__JS文件__
 
 ``` JavaScript
 output: {
@@ -211,7 +210,7 @@ output: {
 }
 ```
 
-CSS文件
+__CSS文件__
 
 ``` JavaScript
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -235,7 +234,7 @@ module.exports = {
 }
 ```
 
-图片、字体
+__图片、字体__
 
 ``` JavaScript
 // file-loader中的hash即为contenthash
@@ -254,6 +253,69 @@ rules: [
 
 ## 代码压缩
 
+__JS文件__
+
 webpack4中已经内置并默认开启了uglifyjs-webpack-plugin，用于JS文件的压缩。
+
+__CSS文件__
+
+``` JavaScript
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+module.exports = {
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name][contenthash:8].css',
+        }),
+        new OptimizeCSSAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano')
+        })
+    ]
+}
+```
+
+__HTML文件__
+
+通过设置html-webpack-plugin的压缩参数实现。
+
+``` JavaScript
+plugins: [
+    new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: 'index.html',
+        chunks: ['index'],
+        minify: {
+            collapseWhitespace: true,
+            removeComments: true
+        }
+    })
+]
+```
+
+## 清理构建目录
+
+``` JavaScript
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+// webpack's output.path directory will be removed
+plugins: [
+    new CleanWebpackPlugin()
+]
+```
+
+## 补齐CSS3前缀
+
+``` JavaScript
+
+```
+
+_待续 ~_
+
+
+
+
+
 
 
