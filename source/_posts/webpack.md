@@ -1,5 +1,5 @@
 ---
-title: webpack
+title: webpack点滴
 date: 2019-09-30 00:00:00
 categories: Uncategorized
 keywords: webpack
@@ -307,9 +307,44 @@ plugins: [
 
 ## 补齐CSS3前缀
 
-``` JavaScript
+安装
 
 ```
+npm i postcss-loader autoprefixer -D
+```
+
+``` JavaScript
+use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    'less-loader',
+    {
+        loader: 'postcss-loader',
+        options: {
+            ident: 'postcss',
+            plugins: [
+                require('autoprefixer')({
+                    browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
+                })
+            ]
+        }
+    }
+]
+```
+
+## px转换成rem
+
+``` JavaScript
+{
+    loader: 'px2rem-loader',
+    options: {
+        remUnit: 75,
+        remPrecision: 8
+    }
+}
+```
+
+在html文件中添加根元素font-size自动计算方法。
 
 _待续 ~_
 
