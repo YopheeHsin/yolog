@@ -346,6 +346,62 @@ use: [
 
 在html文件中添加根元素font-size自动计算方法。
 
+## 资源内联
+
+通过raw-loader内联HTML和JS。
+
+``` HTML
+<head>
+    <title>INLINE</title>
+    ${ require('raw-loader!./meta.html') }
+    <script>${ require('raw-loader!babel-loader!./base.js') }</script>
+</head>
+```
+
+使用style-loader或html-inline-css-webpack-plugin内联CSS文件。
+
+## 多页面应用
+
+利用glob动态获取entry并设置html-webpack-plugin。
+
+``` JavaScript
+const glob = require('glob')
+
+const setMultipage = () => {
+    const entry = {}
+    const htmlWebpackPlugins = []
+
+    const entryFiles = glob.sync(path.resolve(__dirname, 'src/*/index.js'))
+    entryFiles.forEach(entryFile => {
+        const match = entryFile.match(/src\/(.*)\/index.js/)
+        const pageName = match && match[1]
+
+        entry[pageName] = entryFile
+        htmlWebpackPlugins.push(
+            new HtmlWebpackPlugin({
+                template: `./src/${pageName}/index.html`,
+                filename: `${pageName}.html`,
+                chunks: [pageName]
+            })
+        )
+    })
+
+    return {
+        entry,
+        htmlWebpackPlugins
+    }
+}
+
+const { entry, htmlWebpackPlugins } = setMultipage()
+
+module.exports = {
+    entry,
+    plugins: [
+        new CleanWebpackPlugin()
+    ].concat(htmlWebpackPlugins)
+}
+```
+
 _待续 ~_
 
 
