@@ -129,6 +129,7 @@ body {
 }
 .slide__title {
 	position: absolute;
+	top: 0;
 	left: calc(50% - 3.5vh);
 	height: 100%;
 	margin: 0;
