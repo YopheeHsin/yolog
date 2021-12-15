@@ -412,14 +412,17 @@ class InfoForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+    handleChange(event) {
+        console.log(event.target.name, event.target.value);
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
 
-  handleSubmit(event) {
-    alert('你喜欢的风味是: ' + this.state.value);
-    event.preventDefault();
-  }
+    handleSubmit(event) {
+        console.log(this.state);
+        event.preventDefault();
+    }
 
     render() {
         return (
@@ -427,36 +430,36 @@ class InfoForm extends React.Component {
                 <input
                     name="username"
                     value={this.state.username}
-                    onChange={this.handleUsernameChange}
-                />
-                <input
-                    name="healthy"
-                    type="checkbox"
-                    checked={this.state.healthy}
-                    onChange={this.handleInputChange}
-                />
-                <input
-                    name="healthy"
-                    type="checkbox"
-                    checked={this.state.healthy}
-                    onChange={this.handleInputChange}
-                />
-                <input
-                    name="healthy"
-                    type="checkbox"
-                    checked={this.state.healthy}
-                    onChange={this.handleInputChange}
+                    onChange={this.handleChange}
                 />
 
-                <label>
-                选择你喜欢的风味:
-                <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="grapefruit">葡萄柚</option>
-                    <option value="lime">酸橙</option>
-                    <option value="coconut">椰子</option>
-                    <option value="mango">芒果</option>
+                <input
+                    name="healthy"
+                    type="checkbox"
+                    checked={this.state.healthy}
+                    onChange={this.handleChange}
+                />
+
+                <input
+                    name="gender"
+                    type="radio"
+                    value="male"
+                    checked={this.state.gender === 'male'}
+                    onChange={this.handleChange}
+                />
+                <input
+                    name="gender"
+                    type="radio"
+                    value="female"
+                    checked={this.state.gender === 'female'}
+                    onChange={this.handleChange}
+                />
+
+                <select value={this.state.city} onChange={this.handleChange}>
+                    <option value="BJ">北京</option>
+                    <option value="SH">上海</option>
                 </select>
-                </label>
+
                 <input type="submit" value="提交" />
             </form>
         );
