@@ -1,7 +1,7 @@
 ---
 title: React基本用法
 date: 2021-09-09 00:00:00
-categories: JavaScript
+categories: React
 keywords: React, Redux, JavaScript
 description: React、Redux的基本用法
 ---
@@ -24,14 +24,14 @@ JSX标签语法是JavaScript的语法扩展，用来描述UI视图和事件逻�
 
 如果一个标签中无内容，可以使用/>闭合标签。
 
-``` JavaScript
+```
 const element = <h1>Hello, {name}</h1>;
 const element = <img src={user.avatarUrl} />;
 ```
 
 JSX也是表达式，可以在if语句和for循环中使用JSX，将JSX赋值给变量，把JSX当作参数传入，以及在函数中返回JSX。
 
-``` JavaScript
+```
 function getGreeting(user) {
     if (user) return <h1>Hello, {formatName(user)}</h1>;
     return <h1>Hello, Stranger</h1>;
@@ -42,7 +42,7 @@ JSX语法上更接近JavaScript而不是HTML，因而使用camelCase（小驼峰
 
 为了便于阅读，将JSX拆分为多行，此时建议将内容包裹在括号()中。
 
-``` JavaScript
+```
 const element = (
     <h1 className="welcome">
         Hello, {formatName(user)}!
@@ -54,7 +54,7 @@ const element = (
 
 将React元素渲染到DOM节点中。
 
-``` JavaScript
+```
 const element = <h1>Hello, world</h1>;
 ReactDOM.render(element, document.getElementById('app'));
 ```
@@ -67,7 +67,7 @@ ReactDOM.render(element, document.getElementById('app'));
 
 ### 函数组件
 
-``` JavaScript
+```
 function Welcome(props) {
     return <h1>Hello, {props.name}</h1>;
 }
@@ -75,7 +75,7 @@ function Welcome(props) {
 
 ### class组件
 
-``` JavaScript
+```
 class Welcome extends React.Component {
     render() {
         return <h1>Hello, {this.props.name}</h1>;
@@ -89,7 +89,7 @@ class Welcome extends React.Component {
 
 React组件必须像纯函数一样保护其props的只读性。如果需要组件随用户操作、网络响应或者其他变化而动态更改输出内容，可以使用state。
 
-``` JavaScript
+```
 class Clock extends React.Component {
     constructor(props) {
         // 使用props参数调用父类的构造函数
@@ -126,7 +126,7 @@ class Clock extends React.Component {
 
 出于性能考虑，React可能会把多个setState()调用合并成一个，这样this.props和this.state可能会异步更新。如果更新下一个状态时依赖这些值，需要setState()接收一个函数，这个函数用上一个state作为第一个参数，将此次更新被应用时的props做为第二个参数。
 
-``` JavaScript
+```
 this.setState((state, props) => ({
     counter: state.counter + props.increment
 }));
@@ -160,7 +160,7 @@ render()方法是class组件中唯一必须实现的方法，有多种返回类�
 - 将字符串或数字渲染为文本节点
 - 布尔类型或null则什么都不渲染
 
-``` JavaScript
+```
 // 当不需要key或属性时，可使用短语法<>和</>
 function Glossary(props) {
     return (
@@ -178,7 +178,7 @@ function Glossary(props) {
 
 对话框、悬浮卡以及提示框等场景，使用Portal将组件渲染到指定的DOM中。这样做不会影响事件冒泡。
 
-``` JavaScript
+```
 const modalRoot = document.getElementById('modal-root');
 
 class Modal extends React.Component {
@@ -208,7 +208,7 @@ class Modal extends React.Component {
 
 React事件命名采用camelCase（小驼峰），使用JSX时需传入一个函数用作事件处理。
 
-``` JavaScript
+```
 function Form() {
     function handleSubmit(e) {
         e.preventDefault();
@@ -228,14 +228,14 @@ JavaScript中，class的方法默认不会绑定this实例，解决办法有：
 - 在class中使用箭头函数定义方法
 - 在回调中使用箭头函数，此时如果该回调函数作为prop传入子组件时，可能会额外重新渲染
 
-``` JavaScript
+```
 constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
 }
 ```
 
-``` JavaScript
+```
 class ClickButton extends React.Component {
     handleClick = () => { console.log(this); };
 
@@ -249,7 +249,7 @@ class ClickButton extends React.Component {
 }
 ```
 
-``` JavaScript
+```
 class ClickButton extends React.Component {
     handleClick() { console.log(this); }
 
@@ -265,7 +265,7 @@ class ClickButton extends React.Component {
 
 通过箭头函数或者bind为事件处理函数传递额外参数。下面两种情况，事件对象e都会被作为第二个参数传递。使用箭头函数时，事件对象必须显式传递，而bind方式的事件对象会被隐式传递。
 
-``` JavaScript
+```
 <button onClick={e => this.del(id, e)}>Delete</button>
 <button onClick={this.del.bind(this, id)}>Delete</button>
 ```
@@ -274,7 +274,7 @@ class ClickButton extends React.Component {
 
 通过Refs访问DOM节点或者React组件实例。
 
-``` JavaScript
+```
 class CustomTextInput extends React.Component {
     constructor(props) {
         super(props);
@@ -302,7 +302,7 @@ class CustomTextInput extends React.Component {
 }
 ```
 
-``` JavaScript
+```
 class AutoFocusTextInput extends React.Component {
     constructor(props) {
         super(props);
@@ -322,7 +322,7 @@ class AutoFocusTextInput extends React.Component {
 
 上面这种方式不能在函数组件上使用，因为它们没有实例。在函数组件上，可以使用forwardRef进行Refs转发，将ref通过函数组件传递到其子组件上。
 
-``` JavaScript
+```
 const FancyButton = React.forwardRef((props, ref) => (
     <button ref={ref}>{props.children}</button>
 ));
@@ -334,7 +334,7 @@ const ref = React.createRef();
 
 在函数组件内部使用useRef。
 
-``` JavaScript
+```
 function CustomTextInput(props) {
     // 使用useRef创建ref
     const textInput = useRef(null);
@@ -356,7 +356,7 @@ function CustomTextInput(props) {
 
 React也支持另一种设置Refs的方式，称为“回调Refs”。即传递一个函数，在这个函数中接受DOM节点或者组件实例作为参数，以使它们能在其他地方被存储和访问。
 
-``` JavaScript
+```
 class CustomTextInput extends React.Component {
     constructor(props) {
         super(props);
@@ -392,8 +392,10 @@ class CustomTextInput extends React.Component {
 
 “受控组件”自己维护内部state，并根据用户输入等操作进行更新。
 
-``` JavaScript
-class InfoForm extends React.Component {
+“非受控组件”交由DOM节点自己处理，使用ref获取表单数据，可以通过defaultValue属性给表单元素设置初始值。
+
+```
+class InfoForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -401,21 +403,15 @@ class InfoForm extends React.Component {
             healthy: true,
             gender: 'male',
             city: ''
-            hobby: {
-                basketball: false,
-                football: false,
-                badminton: false
-            }
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        console.log(event.target.name, event.target.value);
+    handleChange({ target }) {
         this.setState({
-            [event.target.name]: event.target.value
+            [target.name]: target.type === 'checkbox' ? target.checked : target.value
         });
     }
 
@@ -429,38 +425,47 @@ class InfoForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input
                     name="username"
+                    placeholder="用户名"
                     value={this.state.username}
                     onChange={this.handleChange}
                 />
 
-                <input
-                    name="healthy"
-                    type="checkbox"
-                    checked={this.state.healthy}
-                    onChange={this.handleChange}
-                />
+                <label>
+                    是否健康
+                    <input
+                        name="healthy"
+                        type="checkbox"
+                        checked={this.state.healthy}
+                        onChange={this.handleChange}
+                    />
+                </label>
 
-                <input
-                    name="gender"
-                    type="radio"
-                    value="male"
-                    checked={this.state.gender === 'male'}
-                    onChange={this.handleChange}
-                />
-                <input
-                    name="gender"
-                    type="radio"
-                    value="female"
-                    checked={this.state.gender === 'female'}
-                    onChange={this.handleChange}
-                />
+                <label>
+                    <input
+                        name="gender"
+                        type="radio"
+                        value="male"
+                        checked={this.state.gender === 'male'}
+                        onChange={this.handleChange}
+                    />男
+                </label>
+                <label>
+                    <input
+                        name="gender"
+                        type="radio"
+                        value="female"
+                        checked={this.state.gender === 'female'}
+                        onChange={this.handleChange}
+                    />女
+                </label>
 
-                <select value={this.state.city} onChange={this.handleChange}>
+                <select name="city" value={this.state.city} onChange={this.handleChange}>
+                    <option value="" disabled>请选择城市</option>
                     <option value="BJ">北京</option>
                     <option value="SH">上海</option>
                 </select>
 
-                <input type="submit" value="提交" />
+                <button type="submit">提交</button>
             </form>
         );
     }
